@@ -1,1 +1,1 @@
-# nextjs-fullstack
+# IoT Dashboard for your devices
