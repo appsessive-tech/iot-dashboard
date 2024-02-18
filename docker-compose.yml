@@ -7,4 +7,19 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: abc12345
-      POSTGRES_DB: fullstack-nextjs
+      POSTGRES_DB: iot-dashboard-db
+  iot-dashboard:
+    container_name: iot-dashboard
+    build:
+      context: ./
+      dockerfile: Dockerfile
+
+    # Set environment variables directly in the docker-compose file
+    environment:
+      ENV_VARIABLE: development
+    # Set environment variables based on the .env file
+    env_file:
+      - .env
+    restart: always
+    ports:
+      - 3000:3000

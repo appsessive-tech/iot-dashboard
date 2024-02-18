@@ -1,9 +1,10 @@
 {
-  "name": "awesome-links",
+  "name": "iot-dashboard",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "devDocker": "npx prisma migrate reset --force && npx prisma migrate dev --name init && next dev",
+    "dev": "npx prisma migrate dev --name init && next dev",
     "build": "next build",
     "start": "next start"
   },
